@@ -3,14 +3,14 @@
 The QaFramework represents an advanced Python-based architecture meticulously crafted to enable automated testing through a sophisticated structure for managing test cases, API validation, and seamless integration with prominent tools such as Pytest and Selenium.
 
 ## Table of Contents
-1.[Installation](#installation)
-2.[Usage](#usage)
-3.[Project Structure](#project-structure)
-4.[Custom Markers](#custom-markers)
-5.[Environment Variables](#Environment-Variables)
-6.[Contributing](#Contributing)
-7.[License](#license)
----
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Project Structure](#project-structure)
+4. [Custom Markers](#custom-markers)
+5. [Environment Variables](#environment-variables)
+6. [Contributing](#contributing)
+7. [License](#license)
+
 
 
 
