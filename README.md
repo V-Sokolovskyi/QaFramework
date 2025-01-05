@@ -5,9 +5,11 @@ The QaFramework represents an advanced Python-based architecture meticulously cr
 ## Table of Contents
 1.[Installation](#installation)
 2.[Usage](#usage)
-3.[Project Structure](#project structure)
-4.[# Custom Markers](#custom markers)
-5.[License](#license)
+3.[Project Structure](#projectstructure)
+4.[Custom Markers](#custommarkers)
+5.[Environment Variables](#environmentvariables)
+6.[Contributing](#Contributing)
+7.[License](#license)
 ---
 
 
