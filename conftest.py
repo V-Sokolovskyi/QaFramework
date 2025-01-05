@@ -16,6 +16,9 @@ class User:
     def remove(self):
         self.name = ''
         self.second_name =''
+
+ 
+        
 @pytest.fixture
 def user():
     user = User()
@@ -34,4 +37,6 @@ def github_api():
 @pytest.fixture
 def database():
     db = Database()
+    
     yield db
+

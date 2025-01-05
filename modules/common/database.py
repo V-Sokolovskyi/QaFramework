@@ -5,6 +5,16 @@ class Database():
     def __init__(self):
         self.connection = sqlite3.connect(r'C:\\Users\\admin\Desktop\\gitQa\\QaFramework' + r'\\become_qa_auto.db')
         self.cursor = self.connection.cursor()
+        
+    def get_detalied_orders(self):
+        query = "SELECT orders.id, customers.name, products.name, \
+        products.description, orders.order_date \
+        FROM orders \
+        JOIN customers ON orders.customer_id = customers.id \
+        JOIN products ON orders.product_id = products.id"
+        self.cursor.execute(query)
+        record = self.cursor.fetchall()
+        return record
 
     def test_connection(self):
         sqlite_select_Query ="SELECT sqlite_version();"
@@ -46,12 +56,3 @@ class Database():
         self.cursor.execute(query)
         self.connection.commit()
 
-    def get_detalied_orders(self):
-        query = "SELECT orders.id, customers.name, products.name, \
-        products.description, orders.order_date \
-        FROM orders \
-        JOIN customers ON orders.customer_id = customers.id \
-        JOIN products ON orders.product_id = products.id"
-        self.cursor.execute(query)
-        record = self.cursor.fetchall()
-        return record
