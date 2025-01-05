@@ -2,14 +2,15 @@
 
 The QaFramework represents an advanced Python-based architecture meticulously crafted to enable automated testing through a sophisticated structure for managing test cases, API validation, and seamless integration with prominent tools such as Pytest and Selenium.
 
+## Table of Contents
+1.[Installation](#installation)
+2.[Usage](#usage)
+3.[Project Structure](#project structure)
+4.[# Custom Markers](#custom markers)
+5.[License](#license)
 ---
 
-## Features
 
-- **API Testing:** Provides robust utilities for engaging with APIs, verifying responses, and managing intricate test datasets.
-- **UI Testing:** Incorporates Selenium for comprehensive web UI automation, supporting complex testing scenarios.
-- **Database Testing:** Enables validation of database operations and ensures data integrity.
-- **Custom Test Markers:** Facilitates systematic categorization of tests, optimizing organization and enabling targeted execution.
 
 
 ---
@@ -80,18 +81,39 @@ Leverage `pytest` to execute tests, utilizing custom markers for precise test se
 
 ```
 QaFramework/
-│
-├── core/                # Core utilities and configurations.
-├── tests/               # Test cases categorized by feature or function.
-├── ui/                  # UI testing modules and resources.
-├── database/            # Database interaction utilities and tests.
-├── github.py            # Module for GitHub API interactions.
-├── requirements.txt     # Project dependencies.
-├── .env.example         # Example environment variables file.
-├── pytest.ini           # Pytest configuration and markers.
-└── README.md            # Project documentation (this file).
-```
-
+│               
+├───config
+│       config.py                       # Configuration settings for the framework
+│       
+├───modules
+│   ├───api
+│   │   └───clients
+│   │       │   github.py               # API client for interacting with GitHub
+│   │               
+│   ├───common
+│   │   │   database.py                 # Utility functions for database operations
+│   │   │   
+│   │           
+│   └───ui
+│       └───page_objects
+│           │   base_page.py            # Base class for UI page objects
+│           │   sing_in_page.py         # Page object for the sign-in page
+│                   
+├───tests
+│   │   test_http.py                    # Tests for HTTP requests and responses
+│   │   
+│   ├───api
+│   │   │   test_api.py                 # General API tests
+│   │   │   test_github_api.py          # Tests for GitHub API interactions
+│   │   │   
+│   │           
+│   ├───database
+│       │   test_database.py            # Tests for database operations
+│             
+├──────ui
+│       │   test_ui_page_object.py      # Tests for UI page object functionality
+│ 
+└── README.md                           # Project documentation (this file).         
 ---
 
 ## Custom Markers
