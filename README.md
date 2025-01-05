@@ -120,6 +120,7 @@ QaFramework/
 
 ## Custom Markers
 
+---
 This project employs the following markers to classify and manage test executions:
 
     change:     Tests that modify the name of a user.
@@ -143,7 +144,7 @@ This project employs the following markers to classify and manage test execution
 ---
 
 ## Environment Variables
-
+---
 To ensure seamless execution, define the following variables in your `.env` file:
 
 - **`GITHUB_TOKEN`**: A personal access token required for GitHub API authentication.
