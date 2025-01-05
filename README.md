@@ -7,7 +7,7 @@ The QaFramework represents an advanced Python-based architecture meticulously cr
 2.[Usage](#usage)
 3.[Project Structure](#project-structure)
 4.[Custom Markers](#custom-markers)
-5.[Environment Variables](#environment-variables)
+5.[Environment Variables](#Environment-Variables)
 6.[Contributing](#Contributing)
 7.[License](#license)
 ---
