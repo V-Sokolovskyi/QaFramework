@@ -81,7 +81,6 @@ Leverage `pytest` to execute tests, utilizing custom markers for precise test se
 
 ## Project Structure
 
-```
 QaFramework/
 │               
 ├───config
