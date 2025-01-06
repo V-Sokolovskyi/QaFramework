@@ -81,41 +81,34 @@ Leverage `pytest` to execute tests, utilizing custom markers for precise test se
 
 ## Project Structure
 
+
+
 QaFramework/
-│               
-├───config
-│       config.py                       # Configuration settings for the framework
-│       
-├───modules
-│   ├───api
-│   │   └───clients
-│   │       │   github.py               # API client for interacting with GitHub
-│   │               
-│   ├───common
-│   │   │   database.py                 # Utility functions for database operations
-│   │   │   
-│   │           
-│   └───ui
-│       └───page_objects
-│           │   base_page.py            # Base class for UI page objects
-│           │   sing_in_page.py         # Page object for the sign-in page
-│                   
-├───tests
-│   │   test_http.py                    # Tests for HTTP requests and responses
-│   │   
-│   ├───api
-│   │   │   test_api.py                 # General API tests
-│   │   │   test_github_api.py          # Tests for GitHub API interactions
-│   │   │   
-│   │           
-│   ├───database
-│       │   test_database.py            # Tests for database operations
-│             
-├──────ui
-│       │   test_ui_page_object.py      # Tests for UI page object functionality
-│ 
-└── README.md                           # Project documentation (this file).         
----
+├── config/                              # Configuration directory
+│   └── config.py                        # Configuration settings for the framework
+│
+├── modules/                             # Core application modules
+│   ├── api/                             # API-related functionality
+│   │   └── clients/
+│   │       └── github.py                # API client for interacting with GitHub
+│   ├── common/                          # Common utilities
+│   │   └── database.py                  # Utility functions for database operations
+│   └── ui/                              # UI-related functionality
+│       └── page_objects/
+│           ├── base_page.py             # Base class for UI page objects
+│           └── sing_in_page.py          # Page object for the sign-in page
+│
+├── tests/                               # Test suite directory
+│   ├── test_http.py                     # Tests for HTTP requests and responses
+│   ├── api/                             # API-related tests
+│   │   ├── test_api.py                  # General API tests
+│   │   └── test_github_api.py           # Tests for GitHub API interactions
+│   ├── database/                        # Database-related tests
+│   │   └── test_database.py             # Tests for database operations
+│   └── ui/                              # UI-related tests
+│       └── test_ui_page_object.py       # Tests for UI page object functionality
+│
+└── README.md                            # Project documentation (this file)
 
 ## Custom Markers
 
