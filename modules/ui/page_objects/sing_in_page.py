@@ -100,7 +100,7 @@ class SinginpageAmazon(BasePage):
     # Navigate to the first product from the "Deals" page
     def go_to_produkt(self):
         link = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "[class='a-spacing-none ProductCard-module__title_awabIOxk6xfKvxKcdKDH']"))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "[class='dui-truncate-5 Truncate-module_duiTruncate__EvR99']"))
         )
         link.click()
        
@@ -128,8 +128,8 @@ class SinginpageAmazon(BasePage):
     # Check the name of the first product on the "Deals" page
     def check_first_name_of_product(self):
         link = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "span.a-truncate-full.a-offscreen"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, "[class='dui-truncate-5 Truncate-module_duiTruncate__EvR99']"))
         )
-        produkt_name = link.text
-        return produkt_name
+        
+        return link.text
         

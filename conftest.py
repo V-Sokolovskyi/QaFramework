@@ -1,7 +1,7 @@
 import pytest
 from modules.api.clients.github import Github
 from modules.common.database import Database
-
+from modules.common.Alchemy_database import Database_alch
 
 
 class User:
@@ -40,3 +40,17 @@ def database():
     
     yield db
 
+@pytest.fixture
+def database_alchem():
+    db = Database_alch()
+
+    yield db
+
+@pytest.fixture
+def database_alchem_creat_delet_table():
+    db = Database_alch()
+    db.create_tabe(name_of_tabe="products_1")
+    
+    yield db
+
+    db.delete_table(name_of_table="products_1")

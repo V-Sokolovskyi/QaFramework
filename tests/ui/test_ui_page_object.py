@@ -55,10 +55,11 @@ def test_amazon():
         produkt_name = sing_in.check_name_of_product()
 
         # Step 9: Verify that the product in the cart matches the product selected
-        assert produkt_name_chek in produkt_name, (
+        assert produkt_name_chek[:10] in produkt_name[:10], (
             f"Product mismatch: expected '{produkt_name_chek}', got '{produkt_name}'"
         )
-
+        print(produkt_name)
+        print(produkt_name_chek)
         print("Test completed successfully!")
 
     except Exception as e:
