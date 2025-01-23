@@ -1,9 +1,26 @@
 import requests
 from dotenv import load_dotenv
 import os
+import sys
+
+
+load_dotenv()
 
 class Github:
 
+    def __init__(self):
+        github_token = os.getenv("GITHUB_TOKEN")
+        if not github_token: 
+            raise RuntimeError("No token provided. Exiting...")
+        
+        print("token insid")
+        #Autorization
+        self.headers = {
+            "Authorization": f"token {github_token}",
+            "Accept": "application/vnd.github.v3+json"
+        }
+        
+    
     # Fetch user details by username
     def get_user(self,username):
         r = requests.get(f"https://api.github.com/users/{username}")
@@ -26,15 +43,7 @@ class Github:
     
     # Create a new repository
     def create_repo(self, name_of_repo):
-        load_dotenv()
-        github_token = os.getenv("GITHUB_TOKEN")
-        
         github_api_url = "https://api.github.com"
-        #Autorization
-        headers = {
-            "Authorization": f"token {github_token}",
-            
-        }
 
         #Data for create repo
         repo_data = {
@@ -42,27 +51,20 @@ class Github:
             "description": "This is a test repository created via API",
             "private": False  # False for pablick, True for privat
         }
-
-        
-        r = requests.post(f"{github_api_url}/user/repos", json=repo_data, headers=headers)
+      
+        r = requests.post(f"{github_api_url}/user/repos", json=repo_data, headers = self.headers)
         
         return r
     
     # Delete a repository
     def delete_repo(self,repo_name):
-        load_dotenv()
-        github_token = os.getenv("GITHUB_TOKEN")
+        
         owner = "api-test-akaunt"
         repo_name = repo_name
         
         url = f"https://api.github.com/repos/{owner}/{repo_name}"
 
-        headers = {
-            "Authorization": f"token {github_token}",
-            "Accept": "application/vnd.github.v3+json"
-        }
-
-        r = requests.delete(url, headers=headers)
+        r = requests.delete(url, headers= self.headers)
         return r
     
     # Fetch all GitHub emojis
@@ -73,14 +75,9 @@ class Github:
      
     # Update repository details
     def updare_repo(self, owner , repo , description):
-        load_dotenv()
-        github_token = os.getenv("GITHUB_TOKEN")
+        
         new_description = {"description": f"{description}"}
-        headers = {
-            "Authorization": f"token {github_token}",
-            "Accept": "application/vnd.github.v3+json"
-        }
 
         url = f"https://api.github.com/repos/{owner}/{repo}"
-        r = requests.patch(url, json=new_description, headers=headers)
+        r = requests.patch(url, json=new_description, headers= self.headers)
         return r

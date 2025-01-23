@@ -32,6 +32,7 @@ def user():
 @pytest.fixture
 def github_api():
     api = Github()
+    
     yield api
 
 @pytest.fixture

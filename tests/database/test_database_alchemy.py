@@ -23,8 +23,6 @@ def test4(database_alchem_creat_delet_table):
 
 
 
-
-
 @pytest.mark.databasealchemi
 @pytest.mark.update_info
 def test3(database_alchem_creat_delet_table):
