@@ -5,39 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 
-class SignInPage(BasePage):
-    URL = "https://github.com/login"
-
-    def __init__(self) -> None:
-        super().__init__()
-        
-    def go_to(self):
-        self.driver.get(SignInPage.URL)
-
-    def try_login(self, username, password):
-        # find box for input incorect username or mail
-        login_elem = self.driver.find_element(By.ID, "login_field")
-
-        #input incorect username or mail
-        login_elem.send_keys(username)
-        
-        # find box for input incorect password 
-        pass_elem = self.driver.find_element(By.ID, "password")
-        
-        # input incorect password
-        pass_elem.send_keys(password)
-
-        #find sing in buton 
-        btn_elem = self.driver.find_element(By.NAME, "commit")
-
-        #click sing in buton 
-        btn_elem.click()
-    
-    def check_titel(self, exepted_title):
-        return self.driver.title == exepted_title
-    
-
-
 class SinginpageAmazon(BasePage):
     URL = "https://www.amazon.pl/"
 
@@ -68,7 +35,7 @@ class SinginpageAmazon(BasePage):
         raise Exception("Element not found after multiple retries.")
     
     # Check if CAPTCHA appears and allow manual resolution
-    def check_for_captcha(self):
+    def wait_for_captcha(self):
         try:
             
             captcha = WebDriverWait(self.driver, 5).until(
@@ -119,17 +86,16 @@ class SinginpageAmazon(BasePage):
         link.click()
     
     # Check the name of the product in the shopping cart
-    def check_name_of_product(self):
+    def get_name_of_product(self):
         link = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '[class="a-truncate-cut"]'))
         )
         return link.text
         
     # Check the name of the first product on the "Deals" page
-    def check_first_name_of_product(self):
+    def get_first_name_of_product(self):
         link = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "[class='dui-truncate-5 Truncate-module_duiTruncate__EvR99']"))
         )
         
         return link.text
-        
