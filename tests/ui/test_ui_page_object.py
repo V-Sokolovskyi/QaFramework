@@ -1,7 +1,8 @@
 from modules.ui.page_objects.sing_in_page_github import SignInPageGit
 from modules.ui.page_objects.singin_page_amazon import SinginpageAmazon
 import pytest
-
+from modules.ui.page_objects.sing_in_page_amazon_playwright import Amazon
+from playwright.sync_api import Page,  expect
 
 
 @pytest.mark.uiGit
@@ -77,3 +78,15 @@ def test_amazon():
     finally:
         # Ensure the browser is closed after the test
         sing_in.close()
+
+@pytest.mark.playwrigtAmazon
+def test_Amazon(page: Page):
+    sing_in = Amazon()
+    sing_in.go_to(page)
+
+    try:
+        sing_in.check_name(page,name="Anker Zolo Power Bank (25K, 165W, wbudowane USB-C i zwijany kabel) Szybka przenośna ładowarka, 1 USB-C, 1 USB…")
+        print("Test completed successfully!")
+    except AssertionError as e:
+        print(f"Test failed with error: {e}")
+    sing_in.close(page)
