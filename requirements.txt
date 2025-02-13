@@ -1,0 +1,7 @@
+playwright==1.50.0
+pytest==8.3.3
+python-dotenv==1.0.1
+Requests==2.32.3
+selenium==4.28.1
+SQLAlchemy==2.0.37
+webdriver_manager==4.0.2
