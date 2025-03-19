@@ -29,6 +29,20 @@ def test_login(page: Page):
     except AssertionError as e:
         print ("Test failed with error: {e}")
 
-    
+@pytest.mark.Ingclickbutons
+def  test_buton_click(page:Page):
+    page.set_viewport_size({"width": 1920, "height": 1080})
+    buton_click= Ing(page)
+    buton_click.navigate()
+    buton_click.akcept_cooki()
+
+    try:
+        buton_click.click_butons()
+        buton_click.click_butons_premium()
+        
+        print("Test sucsesful")
+    except AssertionError as e:
+        print (f"Test failed with error: {e}")
+
 
 
