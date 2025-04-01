@@ -1,6 +1,8 @@
 # QaFramework
 
-The QaFramework represents an advanced Python-based architecture meticulously crafted to enable automated testing through a sophisticated structure for managing test cases, API validation, and seamless integration with prominent tools such as Pytest and Selenium.
+QaFramework is a simple Python-based testing framework that I'm building to learn more about automated testing tools like Pytest, Selenium, Playwright, and API testing.
+This project helps me explore how to organize test cases, use environment variables, create custom markers, and work with different testing tools in real scenarios.
+It's still a work in progress, but it already has a basic structure and might be helpful for others who are also just getting started with Python test automation.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -84,29 +86,71 @@ Leverage `pytest` to execute tests, utilizing custom markers for precise test se
 
 ```plaintext
 
-QaFramework/
-├── config/                              # Configuration directory
-│   └── config.py                        # Configuration settings for the framework
-├── modules/                             # Core application modules
-│   ├── api/                             # API-related functionality
-│   │   └── clients/
-│   │       └── github.py                # API client for interacting with GitHub
-│   ├── common/                          # Common utilities
-│   │   └── database.py                  # Utility functions for database operations
-│   └── ui/                              # UI-related functionality
-│       └── page_objects/
-│           ├── base_page.py             # Base class for UI page objects
-│           └── sing_in_page.py          # Page object for the sign-in page
-├── tests/                               # Test suite directory
-│   ├── test_http.py                     # Tests for HTTP requests and responses
-│   ├── api/                             # API-related tests
-│   │   ├── test_api.py                  # General API tests
-│   │   └── test_github_api.py           # Tests for GitHub API interactions
-│   ├── database/                        # Database-related tests
-│   │   └── test_database.py             # Tests for database operations
-│   └── ui/                              # UI-related tests
-│       └── test_ui_page_object.py       # Tests for UI page object functionality
-└── README.md                            # Project documentation (this file)
+QaFramework
+│   
+│   
+├───.github
+│   │   CODE_OF_CONDUCT.md
+│   │   CONTRIBUTING.md
+│   │   pull_request_template.md
+│   │   SECURITY.md
+│   │   
+│   └───ISSUE_TEMPLATE
+│           bug_report.md
+│           feature_request.md
+│                         
+│       
+├───config
+│       config.py
+│       
+├───modules
+│   ├───api
+│   │   └───clients
+│   │       │   github.py
+│   │      
+│   │               
+│   ├───common
+│   │   │   Alchemy_database.py
+│   │   │   database.py
+│   │     
+│   │           
+│   └───ui
+│       └───page_objects
+│           │   base_page.py
+│           │   ing_playwright.py
+│           │   singin_page_amazon.py
+│           │   sing_in_page_amazon_playwright.py
+│           │   sing_in_page_github.py
+│          
+│                   
+├───tests
+│   │   test_http.py
+│   │   
+│   ├───api
+│   │   │   test_api.py
+│   │   │   test_github_api.py
+│   │   
+│   │           
+│   ├───database
+│   │   │   test_database.py
+│   │   │   test_database_alchemy.py
+│   │  
+│   │           
+│   ├───ui
+│   │   │   test_ingweb.py
+│   │   │   test_ui_page_object.py
+|
+|
+│   .env
+│   .gitignore
+│   become_qa_auto.db
+│   conftest.py
+│   data_for_test.py
+│   LICENSE
+│   login_generator.py
+│   pytest.ini
+│   README.md
+│   requirements.txt        
 ```
 
 
