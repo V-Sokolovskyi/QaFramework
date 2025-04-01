@@ -87,70 +87,57 @@ Leverage `pytest` to execute tests, utilizing custom markers for precise test se
 ```plaintext
 
 QaFramework
-│   
-│   
-├───.github
-│   │   CODE_OF_CONDUCT.md
-│   │   CONTRIBUTING.md
-│   │   pull_request_template.md
-│   │   SECURITY.md
-│   │   
-│   └───ISSUE_TEMPLATE
-│           bug_report.md
-│           feature_request.md
-│                         
-│       
-├───config
-│       config.py
-│       
-├───modules
-│   ├───api
-│   │   └───clients
-│   │       │   github.py
-│   │      
-│   │               
-│   ├───common
-│   │   │   Alchemy_database.py
-│   │   │   database.py
-│   │     
-│   │           
-│   └───ui
-│       └───page_objects
-│           │   base_page.py
-│           │   ing_playwright.py
-│           │   singin_page_amazon.py
-│           │   sing_in_page_amazon_playwright.py
-│           │   sing_in_page_github.py
-│          
-│                   
-├───tests
-│   │   test_http.py
-│   │   
-│   ├───api
-│   │   │   test_api.py
-│   │   │   test_github_api.py
-│   │   
-│   │           
-│   ├───database
-│   │   │   test_database.py
-│   │   │   test_database_alchemy.py
-│   │  
-│   │           
-│   ├───ui
-│   │   │   test_ingweb.py
-│   │   │   test_ui_page_object.py
-|
-|
-│   .env
-│   .gitignore
-│   become_qa_auto.db
-│   conftest.py
-│   data_for_test.py
-│   LICENSE
-│   login_generator.py
-│   pytest.ini
-│   README.md
-│   requirements.txt        
+│
+├── .github/                     # GitHub-specific configurations
+│   ├── CODE_OF_CONDUCT.md       # Contributor behavior guidelines
+│   ├── CONTRIBUTING.md          # Instructions for contributing to the project
+│   ├── pull_request_template.md # PR template for consistency
+│   ├── SECURITY.md              # Security guidelines for reporting vulnerabilities
+│   └── ISSUE_TEMPLATE/          # Templates for GitHub issues
+│       ├── bug_report.md        # Template for reporting bugs
+│       └── feature_request.md   # Template for suggesting new features
+│
+├── config/                      # Configuration files and settings
+│   └── config.py                # Main config file for environment, paths, etc.
+│
+├── modules/                     # Core logic split by testing types
+│   ├── api/                     # API testing modules
+│   │   └── clients/
+│   │       └── github.py        # GitHub API client wrapper
+│   │
+│   ├── common/                  # Shared utilities and database logic
+│   │   ├── Alchemy_database.py  # SQLAlchemy-related DB logic
+│   │   └── database.py          # Basic database operations
+│   │
+│   └── ui/                      # UI testing components
+│       └── page_objects/        # Page Object Model (POM) structure
+│           ├── base_page.py     # Base class with common methods
+│           ├── ing_playwright.py# Playwright setup for ING tests
+│           ├── singin_page_amazon.py         # Selenium POM for Amazon login
+│           ├── sing_in_page_amazon_playwright.py # Playwright POM for Amazon login
+│           └── sing_in_page_github.py        # GitHub login page logic
+│
+├── tests/                       # Test suites
+│   ├── test_http.py             # Basic HTTP testing (requests)
+│   ├── api/                     # API-related tests
+│   │   ├── test_api.py
+│   │   └── test_github_api.py
+│   ├── database/                # Database test cases
+│   │   ├── test_database.py
+│   │   └── test_database_alchemy.py
+│   └── ui/                      # UI test cases
+│       ├── test_ingweb.py
+│       └── test_ui_page_object.py
+│
+├── .gitignore                   # Files/folders to ignore in Git
+├── become_qa_auto.db            # SQLite test database
+├── conftest.py                  # Pytest fixtures and hooks
+├── data_for_test.py             # Static test data
+├── LICENSE                      # Project license
+├── login_generator.py           # Helper for generating test credentials
+├── pytest.ini                   # Pytest configuration
+├── README.md                    # Project documentation (you're reading it!)
+└── requirements.txt             # List of Python dependencies
 ```
 
 
